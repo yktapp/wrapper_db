@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="" />
+    <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,9 @@
     </execution>
   </component>
   <component name="GOROOT" path="$USER_HOME$/sdk/go1.12.7" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
@@ -20,6 +26,7 @@
     <option name="directoryName" value="kbMRSWbU" />
   </component>
   <component name="ProjectId" id="1XNUId8nAqAmz6nuqd6zh14E9KB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -56,7 +63,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580885966375</updated>
-      <workItem from="1580885967700" duration="15000" />
+      <workItem from="1580885967700" duration="986000" />
+      <workItem from="1580959739909" duration="2791000" />
+      <workItem from="1581476733795" duration="3126000" />
     </task>
     <servers />
   </component>
@@ -72,9 +81,21 @@
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
     <state x="2480" y="228" key="#GOROOT/0.23.1920.1057/1920.23.1920.1057@1920.23.1920.1057" timestamp="1580885971990" />
+    <state x="753" y="269" key="RollbackChangesDialog" timestamp="1581298867705">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="753" y="269" key="RollbackChangesDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581298867705" />
     <state x="2389" y="190" key="SettingsEditor" timestamp="1580885981756">
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
     <state x="2389" y="190" key="SettingsEditor/0.23.1920.1057/1920.23.1920.1057@1920.23.1920.1057" timestamp="1580885981756" />
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581476734018">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581476734018" />
+    <state x="721" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1581485033044">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="721" y="166" key="refactoring.ChangeSignatureDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581485033044" />
   </component>
 </project>

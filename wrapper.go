@@ -6,7 +6,7 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-type wrapperDB struct {
+type WrapperDB struct {
 	db     *sqlx.DB
 	dbaddr string
 	dbuser string
@@ -24,8 +24,8 @@ type Logger interface {
 
 var (
 	running bool
-	_wdb     = wrapperDB{}
-	_wdbm    = []wrapperDB{}
+	_wdb     = WrapperDB{}
+	_wdbm    = []WrapperDB{}
 )
 
 func Select(dest interface{}, query string, args ...interface{}) error {
@@ -52,40 +52,40 @@ func QueryRow(query string, args ...interface{}) *sql.Row {
 	return _wdb.QueryRow(query, args...)
 }
 
-func (w *wrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
+func (w *WrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
 	if !pingDB(w) {
 		return errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Select(dest, query, args...)
 }
 
-func (w *wrapperDB) Get(dest interface{}, query string, args ...interface{}) error {
+func (w *WrapperDB) Get(dest interface{}, query string, args ...interface{}) error {
 	if !pingDB(w) {
 		return errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Get(dest, query, args...)
 }
 
-func (w *wrapperDB) Exec(query string, args ...interface{}) (sql.Result, error) {
+func (w *WrapperDB) Exec(query string, args ...interface{}) (sql.Result, error) {
 	if !pingDB(w) {
 		return nil, errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Exec(query, args...)
 }
 
-func (w *wrapperDB) MustExec(query string, args ...interface{}) sql.Result {
+func (w *WrapperDB) MustExec(query string, args ...interface{}) sql.Result {
 	if !pingDB(w) {
 		return nil
 	}
 	return w.db.MustExec(query, args...)
 }
 
-func (w *wrapperDB) Rebind(query string) string {
+func (w *WrapperDB) Rebind(query string) string {
 	pingDB(w)
 	return w.db.Rebind(query)
 }
 
-func (w *wrapperDB) QueryRow(query string, args ...interface{}) *sql.Row {
+func (w *WrapperDB) QueryRow(query string, args ...interface{}) *sql.Row {
 	pingDB(w)
 	return w.db.QueryRow(query, args...)
 }
@@ -101,12 +101,12 @@ func New(dbaddr string, dbuser string, dbpass string, dbport string, dbname stri
 	_wdb.db, _ = connect(&_wdb)
 }
 
-func SetDriver(wdb *wrapperDB, drname string) {
+func SetDriver(wdb *WrapperDB, drname string) {
 	wdb.drname = drname
 }
 
-func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) {
-	wdb := &wrapperDB{
+func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) *wrapperDB {
+	wdb := &WrapperDB{
 		db:     nil,
 		dbaddr: dbaddr,
 		dbuser: dbuser,
@@ -119,9 +119,10 @@ func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname
 	wdb.db, _ = connect(wdb)
 	wdb.log = log
 	_wdbm = append(_wdbm, *wdb)
+	return wdb
 }
 
-func connect(wdb *wrapperDB) (conn *sqlx.DB, err error) {
+func connect(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 	if running {
 		return conn, err
 	}
@@ -140,7 +141,7 @@ func connect(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	return conn, err
 }
 
-func dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
+func dial(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 	switch wdb.drname {
 	case "mysql":
 		conn, err = sqlx.Connect(
@@ -165,7 +166,7 @@ func dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	}
 }
 
-func pingDB(wdb *wrapperDB) bool {
+func pingDB(wdb *WrapperDB) bool {
 	err := wdb.db.Ping()
 	if err != nil {
 		wdb.log.Error("error 1 PingDB ", err)
@@ -177,10 +178,10 @@ func pingDB(wdb *wrapperDB) bool {
 	return true
 }
 
-func GetPtr() *wrapperDB {
+func GetPtr() *WrapperDB {
 	return &_wdb
 }
 
-func GetDb(i int) *wrapperDB {
+func GetDb(i int) *WrapperDB {
 	return &_wdbm[i]
 }

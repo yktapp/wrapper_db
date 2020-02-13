@@ -7,10 +7,10 @@ import (
 	"testing"
 )
 
-var ws []*wrapperDB
+var ws []*WrapperDB
 
 func TestGet(t *testing.T) {
-	w := &wrapperDB{dbuser: "test"}
+	w := &WrapperDB{dbuser: "test"}
 	ws = append(ws, w)
 	w.dbuser = "hello"
 	fmt.Println("yoyo", ws[0].dbuser)

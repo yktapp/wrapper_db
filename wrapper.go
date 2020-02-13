@@ -105,7 +105,7 @@ func SetDriver(wdb *WrapperDB, drname string) {
 	wdb.drname = drname
 }
 
-func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) *wrapperDB {
+func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) *WrapperDB {
 	wdb := &WrapperDB{
 		db:     nil,
 		dbaddr: dbaddr,

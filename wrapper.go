@@ -105,7 +105,7 @@ func SetDriver(wdb *WrapperDB, drname string) {
 	wdb.drname = drname
 }
 
-func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) *WrapperDB {
+func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) (*WrapperDB, error) {
 	wdb := &WrapperDB{
 		db:     nil,
 		dbaddr: dbaddr,
@@ -116,10 +116,14 @@ func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname
 		drname: drname,
 		log:    log,
 	}
-	wdb.db, _ = connect(wdb)
+	var err error
+	wdb.db, err = connect(wdb)
+	if err != nil {
+		return wdb, err
+	}
 	wdb.log = log
 	_wdbm = append(_wdbm, *wdb)
-	return wdb
+	return wdb, nil
 }
 
 func connect(wdb *WrapperDB) (conn *sqlx.DB, err error) {

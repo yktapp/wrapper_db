@@ -3,10 +3,7 @@ package wdb
 import (
 	"database/sql"
 	"errors"
-	"os"
-
 	"github.com/jmoiron/sqlx"
-	"github.com/spf13/viper"
 )
 
 type wrapperDB struct {
@@ -51,58 +48,64 @@ func MustExec(query string, args ...interface{}) sql.Result {
 	return _wdb.MustExec(query, args...)
 }
 
+func QueryRow(query string, args ...interface{}) *sql.Row {
+	return _wdb.QueryRow(query, args...)
+}
+
 func (w *wrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
-	if !PingDB(w) {
+	if !pingDB(w) {
 		return errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Select(dest, query, args...)
 }
 
 func (w *wrapperDB) Get(dest interface{}, query string, args ...interface{}) error {
-	if !PingDB(w) {
+	if !pingDB(w) {
 		return errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Get(dest, query, args...)
 }
 
 func (w *wrapperDB) Exec(query string, args ...interface{}) (sql.Result, error) {
-	if !PingDB(w) {
+	if !pingDB(w) {
 		return nil, errors.New("Ошибка подключения к базе данных")
 	}
 	return w.db.Exec(query, args...)
 }
 
 func (w *wrapperDB) MustExec(query string, args ...interface{}) sql.Result {
-	if !PingDB(w) {
+	if !pingDB(w) {
 		return nil
 	}
 	return w.db.MustExec(query, args...)
 }
 
 func (w *wrapperDB) Rebind(query string) string {
-	PingDB(w)
+	pingDB(w)
 	return w.db.Rebind(query)
 }
 
+func (w *wrapperDB) QueryRow(query string, args ...interface{}) *sql.Row {
+	pingDB(w)
+	return w.db.QueryRow(query, args...)
+}
+
 func New(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, log Logger) {
-	_wdb.db, _ = Connect(&wrapperDB{
-		db:     nil,
-		dbaddr: dbaddr,
-		dbuser: dbuser,
-		dbpass: dbpass,
-		dbport: dbport,
-		dbname: dbname,
-		drname: "mysql",
-		log:    log,
-	})
+	_wdb.dbaddr = dbaddr
+	_wdb.dbuser = dbuser
+	_wdb.dbpass = dbpass
+	_wdb.dbport = dbport
+	_wdb.dbname = dbname
+	_wdb.drname = "mysql"
 	_wdb.log = log
+	_wdb.db, _ = connect(&_wdb)
 }
 
 func SetDriver(wdb *wrapperDB, drname string) {
 	wdb.drname = drname
 }
 
-func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, log Logger) {
+func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger) {
 	wdb := &wrapperDB{
 		db:     nil,
 		dbaddr: dbaddr,
@@ -110,27 +113,22 @@ func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname
 		dbpass: dbpass,
 		dbport: dbport,
 		dbname: dbname,
-		drname: "mysql",
-		log:    nil,
+		drname: drname,
+		log:    log,
 	}
-	wdb.db, _ = Connect(wdb)
+	wdb.db, _ = connect(wdb)
 	wdb.log = log
 	_wdbm = append(_wdbm, *wdb)
 }
 
-func Connect(wdb *wrapperDB) (conn *sqlx.DB, err error) {
+func connect(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	if running {
 		return conn, err
 	}
 	running = true
-	if os.Getenv("DOCKER") == "1" {
-		wdb.dbaddr = "db"
-	} else {
-		wdb.dbaddr = viper.GetString("app.db.addr")
-	}
 	for {
 		wdb.log.Info("Попытка подключения к базе данных")
-		wdb.db, err = Dial(wdb)
+		conn, err = dial(wdb)
 		if err != nil {
 			continue
 		} else {
@@ -142,7 +140,7 @@ func Connect(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	return conn, err
 }
 
-func Dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
+func dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	switch wdb.drname {
 	case "mysql":
 		conn, err = sqlx.Connect(
@@ -156,7 +154,7 @@ func Dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 		wdb.log.Info("Posts DB started")
 		return conn, nil
 	case "postgresql":
-		conn, err = sqlx.Connect("postgres", "host=" + wdb.dbaddr + " port=" + wdb.dbport + " user=" + wdb.dbuser + " dbname=" + wdb.dbname + " sslmode=disable")
+		conn, err = sqlx.Connect("postgres", "host=" + wdb.dbaddr + " port=" + wdb.dbport + " password=" + wdb.dbpass + " user=" + wdb.dbuser + " dbname=" + wdb.dbname + " sslmode=disable")
 		if err != nil {
 			wdb.log.Error("error connection db pg", err)
 			return conn, err
@@ -167,14 +165,14 @@ func Dial(wdb *wrapperDB) (conn *sqlx.DB, err error) {
 	}
 }
 
-func PingDB(wdb *wrapperDB) bool {
+func pingDB(wdb *wrapperDB) bool {
 	err := wdb.db.Ping()
 	if err != nil {
 		wdb.log.Error("error 1 PingDB ", err)
 		if err := wdb.db.Close(); err != nil {
 			wdb.log.Error("error 2 PingDB ", err)
 		}
-		_, err = Connect(wdb)
+		wdb.db, err = connect(wdb)
 	}
 	return true
 }

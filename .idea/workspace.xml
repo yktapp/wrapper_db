@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrapper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,75 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app_back@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app_back@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app_back@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="app_back: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="pager: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="pager: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="pager: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@10.12.2.20" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="pager: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="GOROOT" path="$USER_HOME$/sdk/go1.12.7" />
   <component name="Git.Settings">
@@ -33,6 +105,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -41,12 +114,80 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
+  <component name="RunManager" selected="Go Test.TestConnectionPostgresql in github.com/yktapp/wrapper_db">
+    <configuration name="TestConnection in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wrapper_db" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yktapp/wrapper_db" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestConnection$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestConnectionMysql in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wrapper_db" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yktapp/wrapper_db" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestConnectionMysql$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestConnectionPostgresql in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wrapper_db" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yktapp/wrapper_db" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestConnectionPostgresql$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGet in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wrapper_db" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yktapp/wrapper_db" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestGet$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestConnectionPostgresql in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestConnectionMysql in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestConnection in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestGet in github.com/yktapp/wrapper_db" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:app_back@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:app_back@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@59a1176b" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:postgres@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -65,7 +206,8 @@
       <updated>1580885966375</updated>
       <workItem from="1580885967700" duration="986000" />
       <workItem from="1580959739909" duration="2791000" />
-      <workItem from="1581476733795" duration="3126000" />
+      <workItem from="1581476733795" duration="8433000" />
+      <workItem from="1581563410884" duration="3834000" />
     </task>
     <servers />
   </component>
@@ -81,6 +223,46 @@
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
     <state x="2480" y="228" key="#GOROOT/0.23.1920.1057/1920.23.1920.1057@1920.23.1920.1057" timestamp="1580885971990" />
+    <state x="978" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581572828674">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="978" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572828674" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581574790187">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574790187" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581574790187">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574790187" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581574790187">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574790187" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581574790187">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574790187" />
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1581574189380">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189380" />
+    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1581574189379">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189379" />
+    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1581574189379">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189379" />
+    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1581574189380">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189380" />
+    <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1581572596001">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="238" height="457" key="HiddenNamespacesPopup/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572596001" />
     <state x="753" y="269" key="RollbackChangesDialog" timestamp="1581298867705">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -89,13 +271,33 @@
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
     <state x="2389" y="190" key="SettingsEditor/0.23.1920.1057/1920.23.1920.1057@1920.23.1920.1057" timestamp="1580885981756" />
-    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581476734018">
+    <state x="814" y="330" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1581572799072">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581476734018" />
+    <state x="814" y="330" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572799072" />
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581563426365">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581563426365" />
     <state x="721" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1581485033044">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="721" y="166" key="refactoring.ChangeSignatureDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581485033044" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/wrapper.go</url>
+          <line>145</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/wrapper.go</url>
+          <line>156</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

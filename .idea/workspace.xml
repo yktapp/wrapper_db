@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrapper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +204,7 @@
       <workItem from="1580885967700" duration="986000" />
       <workItem from="1580959739909" duration="2791000" />
       <workItem from="1581476733795" duration="8433000" />
-      <workItem from="1581563410884" duration="3834000" />
+      <workItem from="1581563410884" duration="4615000" />
     </task>
     <servers />
   </component>
@@ -283,21 +280,5 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="721" y="166" key="refactoring.ChangeSignatureDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581485033044" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/wrapper.go</url>
-          <line>145</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/wrapper.go</url>
-          <line>156</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -52,6 +52,18 @@ func QueryRow(query string, args ...interface{}) *sql.Row {
 	return _wdb.QueryRow(query, args...)
 }
 
+func Query(query string, args ...interface{}) (*sql.Rows, error) {
+	return _wdb.Query(query, args...)
+
+}
+
+func (w *WrapperDB) Query(query string, args ...interface{}) (*sql.Rows, error) {
+	if !pingDB(w) {
+		return nil, errors.New("Ошибка подключения к базе данных")
+	}
+	return w.db.Query(query, args...)
+}
+
 func (w *WrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
 	if !pingDB(w) {
 		return errors.New("Ошибка подключения к базе данных")
@@ -101,6 +113,17 @@ func New(dbaddr string, dbuser string, dbpass string, dbport string, dbname stri
 	_wdb.db, _ = connect(&_wdb)
 }
 
+func NewWithClient(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, log Logger, c *sqlx.DB) {
+	_wdb.dbaddr = dbaddr
+	_wdb.dbuser = dbuser
+	_wdb.dbpass = dbpass
+	_wdb.dbport = dbport
+	_wdb.dbname = dbname
+	_wdb.drname = "mysql"
+	_wdb.log = log
+	_wdb.db = c
+}
+
 func SetDriver(wdb *WrapperDB, drname string) {
 	wdb.drname = drname
 }
@@ -123,6 +146,20 @@ func NewMulti(dbaddr string, dbuser string, dbpass string, dbport string, dbname
 	}
 	wdb.log = log
 	_wdbm = append(_wdbm, *wdb)
+	return wdb, nil
+}
+
+func NewMultiWithClient(dbaddr string, dbuser string, dbpass string, dbport string, dbname string, drname string, log Logger, c *sqlx.DB) (*WrapperDB, error) {
+	wdb := &WrapperDB{
+		db:     c,
+		dbaddr: dbaddr,
+		dbuser: dbuser,
+		dbpass: dbpass,
+		dbport: dbport,
+		dbname: dbname,
+		drname: drname,
+		log:    log,
+	}
 	return wdb, nil
 }
 

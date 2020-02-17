@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrapper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +17,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="508" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -110,8 +117,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager" selected="Go Test.TestConnectionPostgresql in github.com/yktapp/wrapper_db">
-    <configuration name="TestConnection in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.go test github.com/yktapp/wrapper_db">
+    <configuration name="TestExec in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -119,10 +126,10 @@
       <package value="github.com/yktapp/wrapper_db" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestConnection$" />
+      <pattern value="^TestExec$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestConnectionMysql in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestQueryRow in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -130,10 +137,10 @@
       <package value="github.com/yktapp/wrapper_db" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestConnectionMysql$" />
+      <pattern value="^TestQueryRow$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestConnectionPostgresql in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSelect in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -141,10 +148,10 @@
       <package value="github.com/yktapp/wrapper_db" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestConnectionPostgresql$" />
+      <pattern value="^TestSelect$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGet in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSelectMulti in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -152,15 +159,26 @@
       <package value="github.com/yktapp/wrapper_db" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestGet$" />
+      <pattern value="^TestSelectMulti$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wrapper_db" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yktapp/wrapper_db" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestConnectionPostgresql in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.TestConnectionMysql in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.TestConnection in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.TestGet in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.go test github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestSelectMulti in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestSelect in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestExec in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestQueryRow in github.com/yktapp/wrapper_db" />
       </list>
     </recent_temporary>
   </component>
@@ -173,15 +191,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:app_back@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:app_back@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@59a1176b" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:postgres@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -203,7 +212,8 @@
       <workItem from="1580885967700" duration="986000" />
       <workItem from="1580959739909" duration="2791000" />
       <workItem from="1581476733795" duration="8433000" />
-      <workItem from="1581563410884" duration="5454000" />
+      <workItem from="1581563410884" duration="6971000" />
+      <workItem from="1581904819723" duration="4591000" />
     </task>
     <servers />
   </component>
@@ -223,38 +233,38 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="978" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572828674" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581576466126">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581909968899">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581576466126" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581576466126">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968899" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581909968898">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581576466126" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581576466126">
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581909968898">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581576466126" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581576466126">
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581909968898">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581576466126" />
-    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1581574189380">
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1581659071021">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189380" />
-    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1581574189379">
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581659071021" />
+    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1581659071020">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189379" />
-    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1581574189379">
+    <state width="1878" height="357" key="GridCell.Tab.1.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581659071020" />
+    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1581659071020">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189379" />
-    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1581574189380">
+    <state width="1878" height="357" key="GridCell.Tab.1.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581659071020" />
+    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1581659071020">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581574189380" />
+    <state width="1878" height="357" key="GridCell.Tab.1.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581659071020" />
     <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1581572596001">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -271,13 +281,17 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="814" y="330" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572799072" />
-    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581563426365">
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581904819560">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581563426365" />
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581904819560" />
     <state x="721" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1581485033044">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="721" y="166" key="refactoring.ChangeSignatureDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581485033044" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/wrapper_db$TestExec_in_github_com_yktapp_wrapper_db.out" NAME="TestExec in github.com/yktapp/wrapper_db Coverage Results" MODIFIED="1581909291025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/wrapper_db$go_test_github_com_yktapp_wrapper_db.out" NAME="go test github.com/yktapp/wrapper_db Coverage Results" MODIFIED="1581909881151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

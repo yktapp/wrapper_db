@@ -187,7 +187,7 @@ func dial(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 	case "mysql":
 		conn, err = sqlx.Connect(
 			"mysql",
-			wdb.dbuser+":"+wdb.dbpass+"@tcp("+wdb.dbaddr+":"+wdb.dbport+")/"+wdb.dbname+"?charset=utf8mb4,utf8")
+			wdb.dbuser+":"+wdb.dbpass+"@tcp("+wdb.dbaddr+":"+wdb.dbport+")/"+wdb.dbname+"?charset=utf8mb4,utf8&parseTime=true")
 		if err != nil {
 			wdb.log.Error("error connection db ", err)
 			return conn, err

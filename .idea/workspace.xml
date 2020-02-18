@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrapper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +116,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager" selected="Go Test.go test github.com/yktapp/wrapper_db">
+  <component name="RunManager" selected="Go Test.TestNew in github.com/yktapp/wrapper_db">
     <configuration name="TestExec in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
@@ -129,7 +128,7 @@
       <pattern value="^TestExec$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestQueryRow in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNew in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -137,7 +136,7 @@
       <package value="github.com/yktapp/wrapper_db" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestQueryRow$" />
+      <pattern value="^TestNew$" />
       <method v="2" />
     </configuration>
     <configuration name="TestSelect in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -174,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestNew in github.com/yktapp/wrapper_db" />
+        <item itemvalue="Go Test.TestSelect in github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.go test github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestSelectMulti in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.TestSelect in github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestExec in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.TestQueryRow in github.com/yktapp/wrapper_db" />
       </list>
     </recent_temporary>
   </component>
@@ -187,12 +186,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:app_back@10.12.2.20" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -213,7 +207,8 @@
       <workItem from="1580959739909" duration="2791000" />
       <workItem from="1581476733795" duration="8433000" />
       <workItem from="1581563410884" duration="6971000" />
-      <workItem from="1581904819723" duration="4591000" />
+      <workItem from="1581904819723" duration="4921000" />
+      <workItem from="1581919468559" duration="1570000" />
     </task>
     <servers />
   </component>
@@ -233,22 +228,22 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="978" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572828674" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581909968899">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581928660499">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968899" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581909968898">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581928660499">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581909968898">
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581928660499">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581909968898">
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581928660499">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581909968898" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
     <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1581659071021">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

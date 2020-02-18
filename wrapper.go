@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"github.com/jmoiron/sqlx"
+	"sync"
 )
 
 type WrapperDB struct {
@@ -15,6 +16,7 @@ type WrapperDB struct {
 	dbname string
 	drname string
 	log    Logger
+	mux    sync.Mutex
 }
 
 type Logger interface {
@@ -24,8 +26,8 @@ type Logger interface {
 
 var (
 	running bool
-	_wdb     = WrapperDB{}
-	_wdbm    = []WrapperDB{}
+	_wdb    = WrapperDB{}
+	_wdbm   = []WrapperDB{}
 )
 
 func Select(dest interface{}, query string, args ...interface{}) error {
@@ -164,10 +166,6 @@ func NewMultiWithClient(dbaddr string, dbuser string, dbpass string, dbport stri
 }
 
 func connect(wdb *WrapperDB) (conn *sqlx.DB, err error) {
-	if running {
-		return conn, err
-	}
-	running = true
 	for {
 		wdb.log.Info("Попытка подключения к базе данных")
 		conn, err = dial(wdb)
@@ -178,7 +176,6 @@ func connect(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 			break
 		}
 	}
-	running = false
 	return conn, err
 }
 
@@ -196,7 +193,7 @@ func dial(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 		wdb.log.Info("Posts DB started")
 		return conn, nil
 	case "postgresql":
-		conn, err = sqlx.Connect("postgres", "host=" + wdb.dbaddr + " port=" + wdb.dbport + " password=" + wdb.dbpass + " user=" + wdb.dbuser + " dbname=" + wdb.dbname + " sslmode=disable")
+		conn, err = sqlx.Connect("postgres", "host="+wdb.dbaddr+" port="+wdb.dbport+" password="+wdb.dbpass+" user="+wdb.dbuser+" dbname="+wdb.dbname+" sslmode=disable")
 		if err != nil {
 			wdb.log.Error("error connection db pg", err)
 			return conn, err
@@ -208,6 +205,8 @@ func dial(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 }
 
 func pingDB(wdb *WrapperDB) bool {
+	wdb.mux.Lock()
+	defer wdb.mux.Unlock()
 	err := wdb.db.Ping()
 	if err != nil {
 		wdb.log.Error("error 1 PingDB ", err)

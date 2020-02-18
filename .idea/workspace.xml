@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c28f411f-19d4-4b59-a323-78bc021d3879" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrapper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager" selected="Go Test.TestNew in github.com/yktapp/wrapper_db">
+  <component name="RunManager" selected="Go Test.go test github.com/yktapp/wrapper_db">
     <configuration name="TestExec in github.com/yktapp/wrapper_db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wrapper_db" />
       <working_directory value="$PROJECT_DIR$" />
@@ -173,9 +171,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.go test github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestNew in github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestSelect in github.com/yktapp/wrapper_db" />
-        <item itemvalue="Go Test.go test github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestSelectMulti in github.com/yktapp/wrapper_db" />
         <item itemvalue="Go Test.TestExec in github.com/yktapp/wrapper_db" />
       </list>
@@ -209,6 +207,8 @@
       <workItem from="1581563410884" duration="6971000" />
       <workItem from="1581904819723" duration="4921000" />
       <workItem from="1581919468559" duration="1570000" />
+      <workItem from="1581994447863" duration="224000" />
+      <workItem from="1582003427273" duration="796000" />
     </task>
     <servers />
   </component>
@@ -228,22 +228,22 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="978" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581572828674" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1581928660499">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1582004359981">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1581928660499">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1582004359981" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1582004359980">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1581928660499">
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1582004359980" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1582004359980">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1581928660499">
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1582004359980" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1582004359981">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1581928660499" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1582004359981" />
     <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1581659071021">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

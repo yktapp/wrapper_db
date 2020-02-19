@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"errors"
+	"github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 	"sync"
 )
@@ -57,7 +58,7 @@ func Query(query string, args ...interface{}) (*sql.Rows, error) {
 
 func (w *WrapperDB) Query(query string, args ...interface{}) (*sql.Rows, error) {
 	r, err := w.db.Query(query, args...)
-	if err == driver.ErrBadConn {
+	if err == driver.ErrBadConn || err == mysql.ErrInvalidConn {
 		err = w.db.Close()
 		if err != nil {
 			w.log.Error("error on close connection - ", err)
@@ -74,7 +75,7 @@ func (w *WrapperDB) Query(query string, args ...interface{}) (*sql.Rows, error) 
 
 func (w *WrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
 	err := w.db.Select(dest, query, args...)
-	if err == driver.ErrBadConn {
+	if err == driver.ErrBadConn || err == mysql.ErrInvalidConn {
 		err = w.db.Close()
 		if err != nil {
 			w.log.Error("error on close connection - ", err)
@@ -91,7 +92,7 @@ func (w *WrapperDB) Select(dest interface{}, query string, args ...interface{}) 
 
 func (w *WrapperDB) Get(dest interface{}, query string, args ...interface{}) error {
 	err := w.db.Get(dest, query, args...)
-	if err == driver.ErrBadConn {
+	if err == driver.ErrBadConn || err == mysql.ErrInvalidConn {
 		err = w.db.Close()
 		if err != nil {
 			w.log.Error("error on close connection - ", err)
@@ -108,7 +109,7 @@ func (w *WrapperDB) Get(dest interface{}, query string, args ...interface{}) err
 
 func (w *WrapperDB) Exec(query string, args ...interface{}) (sql.Result, error) {
 	r, err := w.db.Exec(query, args...)
-	if err == driver.ErrBadConn {
+	if err == driver.ErrBadConn || err == mysql.ErrInvalidConn {
 		err = w.db.Close()
 		if err != nil {
 			w.log.Error("error on close connection - ", err)

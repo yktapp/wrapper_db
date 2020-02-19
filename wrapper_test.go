@@ -58,23 +58,6 @@ func TestSelect(t *testing.T) {
 	assert.Equal(t, expect, s)
 }
 
-func TestMustExec(t *testing.T) {
-	// Connect mock
-	mockDB, mock, _ := sqlmock.New()
-	sqlxDB := sqlx.NewDb(mockDB, "sqlmock")
-	defer mockDB.Close()
-
-	// Mock
-	mock.ExpectExec("INSERT INTO sometable").WillReturnResult(sqlmock.NewResult(1, 1))
-	// Connect
-	NewWithClient("adfsjlk", "askdf", "pass", "123", "asdf", logrus.New(), sqlxDB)
-	// Test
-	res := MustExec("INSERT INTO sometable")
-	// Result
-	id, _ := res.LastInsertId()
-	assert.Equal(t, int64(1), id)
-}
-
 func TestQueryRow(t *testing.T) {
 	// Connect mock
 	mockDB, mock, _ := sqlmock.New()
@@ -254,19 +237,3 @@ func TestExecMulti(t *testing.T) {
 	assert.Equal(t, int64(1), id)
 }
 
-func TestMustExecMulti(t *testing.T) {
-	// Connect mock
-	mockDB, mock, _ := sqlmock.New()
-	sqlxDB := sqlx.NewDb(mockDB, "sqlmock")
-	defer mockDB.Close()
-
-	// Mock
-	mock.ExpectExec("INSERT INTO sometable").WillReturnResult(sqlmock.NewResult(1, 1))
-	// Connect
-	db, _ := NewMultiWithClient("adfsjlk", "askdf", "pass", "123", "asdf", "mysql", logrus.New(), sqlxDB)
-	// Test
-	res := db.MustExec("INSERT INTO sometable")
-	// Result
-	id, _ := res.LastInsertId()
-	assert.Equal(t, int64(1), id)
-}

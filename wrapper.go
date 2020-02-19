@@ -2,6 +2,7 @@ package wdb
 
 import (
 	"database/sql"
+	"database/sql/driver"
 	"errors"
 	"github.com/jmoiron/sqlx"
 	"sync"
@@ -46,61 +47,87 @@ func Rebind(query string) string {
 	return _wdb.Rebind(query)
 }
 
-func MustExec(query string, args ...interface{}) sql.Result {
-	return _wdb.MustExec(query, args...)
-}
-
 func QueryRow(query string, args ...interface{}) *sql.Row {
 	return _wdb.QueryRow(query, args...)
 }
 
 func Query(query string, args ...interface{}) (*sql.Rows, error) {
 	return _wdb.Query(query, args...)
-
 }
 
 func (w *WrapperDB) Query(query string, args ...interface{}) (*sql.Rows, error) {
-	if !pingDB(w) {
-		return nil, errors.New("Ошибка подключения к базе данных")
+	r, err := w.db.Query(query, args...)
+	if err == driver.ErrBadConn {
+		err = w.db.Close()
+		if err != nil {
+			w.log.Error("error on close connection - ", err)
+			return r, err
+		}
+		w.db, err = connect(w)
+		if err != nil {
+			w.log.Error("error on init connection - ", err)
+			return r, err
+		}
 	}
-	return w.db.Query(query, args...)
+	return r, err
 }
 
 func (w *WrapperDB) Select(dest interface{}, query string, args ...interface{}) error {
-	if !pingDB(w) {
-		return errors.New("Ошибка подключения к базе данных")
+	err := w.db.Select(dest, query, args...)
+	if err == driver.ErrBadConn {
+		err = w.db.Close()
+		if err != nil {
+			w.log.Error("error on close connection - ", err)
+			return err
+		}
+		w.db, err = connect(w)
+		if err != nil {
+			w.log.Error("error on init connection - ", err)
+			return err
+		}
 	}
-	return w.db.Select(dest, query, args...)
+	return err
 }
 
 func (w *WrapperDB) Get(dest interface{}, query string, args ...interface{}) error {
-	if !pingDB(w) {
-		return errors.New("Ошибка подключения к базе данных")
+	err := w.db.Get(dest, query, args...)
+	if err == driver.ErrBadConn {
+		err = w.db.Close()
+		if err != nil {
+			w.log.Error("error on close connection - ", err)
+			return err
+		}
+		w.db, err = connect(w)
+		if err != nil {
+			w.log.Error("error on init connection - ", err)
+			return err
+		}
 	}
-	return w.db.Get(dest, query, args...)
+	return err
 }
 
 func (w *WrapperDB) Exec(query string, args ...interface{}) (sql.Result, error) {
-	if !pingDB(w) {
-		return nil, errors.New("Ошибка подключения к базе данных")
+	r, err := w.db.Exec(query, args...)
+	if err == driver.ErrBadConn {
+		err = w.db.Close()
+		if err != nil {
+			w.log.Error("error on close connection - ", err)
+			return r, err
+		}
+		w.db, err = connect(w)
+		if err != nil {
+			w.log.Error("error on init connection - ", err)
+			return r, err
+		}
 	}
-	return w.db.Exec(query, args...)
-}
-
-func (w *WrapperDB) MustExec(query string, args ...interface{}) sql.Result {
-	if !pingDB(w) {
-		return nil
-	}
-	return w.db.MustExec(query, args...)
+	return r, err
 }
 
 func (w *WrapperDB) Rebind(query string) string {
-	pingDB(w)
 	return w.db.Rebind(query)
 }
 
 func (w *WrapperDB) QueryRow(query string, args ...interface{}) *sql.Row {
-	pingDB(w)
 	return w.db.QueryRow(query, args...)
 }
 

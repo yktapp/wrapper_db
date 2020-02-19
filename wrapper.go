@@ -6,7 +6,6 @@ import (
 	"errors"
 	"github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	"sync"
 )
 
 type WrapperDB struct {
@@ -18,7 +17,6 @@ type WrapperDB struct {
 	dbname string
 	drname string
 	log    Logger
-	mux    sync.Mutex
 }
 
 type Logger interface {
@@ -27,7 +25,6 @@ type Logger interface {
 }
 
 var (
-	running bool
 	_wdb    = WrapperDB{}
 	_wdbm   = []WrapperDB{}
 )
@@ -230,20 +227,6 @@ func dial(wdb *WrapperDB) (conn *sqlx.DB, err error) {
 	default:
 		return conn, errors.New("set db driver first")
 	}
-}
-
-func pingDB(wdb *WrapperDB) bool {
-	wdb.mux.Lock()
-	defer wdb.mux.Unlock()
-	err := wdb.db.Ping()
-	if err != nil {
-		wdb.log.Error("error 1 PingDB ", err)
-		if err := wdb.db.Close(); err != nil {
-			wdb.log.Error("error 2 PingDB ", err)
-		}
-		wdb.db, err = connect(wdb)
-	}
-	return true
 }
 
 func GetPtr() *WrapperDB {

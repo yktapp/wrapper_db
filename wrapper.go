@@ -53,6 +53,15 @@ func Query(query string, args ...interface{}) (*sql.Rows, error) {
 	return _wdb.Query(query, args...)
 }
 
+func Begin() (*sql.Tx, error) {
+	return _wdb.Begin()
+}
+
+func (w *WrapperDB) Begin() (*sql.Tx, error) {
+	tx, err := w.db.Begin()
+	return tx, err
+}
+
 func (w *WrapperDB) Query(query string, args ...interface{}) (*sql.Rows, error) {
 	r, err := w.db.Query(query, args...)
 	if err == driver.ErrBadConn || err == mysql.ErrInvalidConn {
